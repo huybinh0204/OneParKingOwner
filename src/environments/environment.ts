@@ -5,7 +5,7 @@
 export const environment = {
   production: false
 };
-export const ENDPOINT_URL = 'http://your-url/api/';
+export const ENDPOINT_URL = 'http://oneparking.dcv.vn/api/';
 
 /*
  * For easier debugging in development mode, you can import the following file
