@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
 
     </ion-buttons>
-    <ion-title>Guard List</ion-title>
+    <ion-title>Bảo Vệ</ion-title>
     <ion-buttons slot="end">
 
       <ion-button (click)="addNewGuard()">
@@ -16,17 +16,15 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-searchbar clearIcon="string" [(ngModel)]="search" class="ion-margin-top"></ion-searchbar>
+  <ion-searchbar placeholder="Tìm kiếm..." clearIcon="string"  [(ngModel)]="search" class="ion-margin-top"></ion-searchbar>
   <div class="ion-margin-horizontal">
-    <p class="text_p">Security Guard List</p>
+    <p class="text_p">Danh sách bảo vệ</p>
 
     <ion-item-sliding *ngFor="let item of data |filter:search">
 
       <ion-item lines="none">
         <ion-label class="name">{{item.name}} </ion-label>
-
       </ion-item>
-
       <ion-item-options side="end">
         <ion-item-option expandable type="button" (click)="presentModal(item.id)">
           <ion-icon src="assets/icon-image/delete.svg"></ion-icon>

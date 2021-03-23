@@ -132,6 +132,7 @@ export class ScannerPage implements OnInit {
     this.api.startLoader();
 
     this.api.authGetReq('booking/scanner/' + e).subscribe((res: any) => {
+      console.log("booking/scanner",res.data)
       this.booking = res.data;
       this.api.dismissLoader();
 
@@ -142,18 +143,21 @@ export class ScannerPage implements OnInit {
     });
 
   }
-  changeStatus(bookingStatus, paymentStatus) {
+  changeStatus(bookingStatus, paymentStatus,type) {
     this.api.startLoader();
-
     const data = {
       status: bookingStatus,
       payment_status: paymentStatus,
+      type:type,
     };
-    this.api.authUpdateReq('booking/' + this.booking.id + '/update', data).subscribe((res: any) => {
+    alert(data)
+    this.api.authPostReq('booking/' + this.booking.id + '/update', data).subscribe((res: any) => {
+
       this.booking = res.data;
       this.api.dismissLoader();
 
     }, err => {
+      alert(err)
       console.error('err', err);
       this.api.dismissLoader();
 

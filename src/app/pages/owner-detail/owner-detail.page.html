@@ -3,11 +3,11 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Profile</ion-title>
+    <ion-title>Hồ Sơ</ion-title>
     <ion-buttons slot="end">
 
       <ion-button (click)="updateProfile()">
-        <ion-label class="show-sm">Save</ion-label>
+        <ion-label class="show-sm">Lưu</ion-label>
         <ion-icon class="show-sm" name="thumbs-up" slot="end"></ion-icon>
         <ion-icon class="hide-sm" name="thumbs-up" slot="icon-only"></ion-icon>
       </ion-button>
@@ -24,16 +24,16 @@
         <div class="img_div ion-text-center">
           <img (click)="tackPhotoFromCamera()" [src]="profileData.imageUri" height="150" width="150"
             style="border-radius: 50%;">
-          <h3 class="tittle">Up to date your profile</h3>
-          <p class="text ion-padding-horizontal">Powered by SaaSMonks</p>
+          <h3 class="tittle">Cập nhật hồ sơ của bạn</h3>
+          <p class="text ion-padding-horizontal">Được cung cấp bởi DCV</p>
         </div>
         <div class="detail_div">
-          <p class="form_p">Profile Detail</p>
+          <p class="form_p">Chi tiết hồ sơ</p>
           <form>
 
 
             <ion-item class="item_div">
-              <ion-label position="stacked" class="lbl_name" mode="md">Name</ion-label>
+              <ion-label position="stacked" class="lbl_name" mode="md">Tên</ion-label>
               <ion-input required type="text" [(ngModel)]="profileData.name" name="name">
 
               </ion-input>
@@ -46,7 +46,7 @@
               <strong color="danger" *ngIf="error.email">{{error.email['0']}}</strong>
             </ion-item>
             <ion-item class="item_div">
-              <ion-label position="stacked" class="lbl_name" mode="md">Phone number</ion-label>
+              <ion-label position="stacked" class="lbl_name" mode="md">Số điện thoại</ion-label>
               <ion-input required type="text" [(ngModel)]="profileData.phone_no" name="phone_no">
               </ion-input>
               <strong color="danger" *ngIf="error.phone_no">{{error.phone_no['0']}}</strong>
@@ -54,24 +54,24 @@
           </form>
         </div>
         <div class="detail_div">
-          <p class="form_p">Change Password</p>
+          <p class="form_p">Đổi mật khẩu</p>
           <form>
 
 
             <ion-item class="item_div">
-              <ion-label position="stacked" class="lbl_name" mode="md">New Password</ion-label>
+              <ion-label position="stacked" class="lbl_name" mode="md">Mật khẩu mới</ion-label>
               <ion-input type="password" [(ngModel)]="password.password" name="password">
               </ion-input>
               <strong color="danger" *ngIf="error.password">{{error.password['0']}}</strong>
             </ion-item>
             <ion-item class="item_div">
-              <ion-label position="stacked" class="lbl_name" mode="md">Confirm Password</ion-label>
+              <ion-label position="stacked" class="lbl_name" mode="md">Xác nhận mật khẩu</ion-label>
               <ion-input type="password" [(ngModel)]="password.password_confirmation" name="confirmed_password">
               </ion-input>
               <strong color="danger" *ngIf="error.confirmed_password">{{error.confirmed_password['0']}}</strong>
             </ion-item>
             <div class="col-12" style="text-align:center;margin-top:8px ;">
-              <ion-button (click)="updatePassword()">Change Password</ion-button>
+              <ion-button (click)="updatePassword()">Đổi mật khẩu</ion-button>
             </div>
           </form>
         </div>

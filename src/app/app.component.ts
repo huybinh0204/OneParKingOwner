@@ -14,49 +14,49 @@ import { ApiService } from './service/api.service';
 export class AppComponent {
   public appPages = [
     {
-      title: 'Home',
+      title: 'Trang chủ',
       url: '/home',
       // icon: 'assets/icon-image/home-icon.svg',
       icon: 'home',
       for: 1
     },
     {
-      title: 'Profile',
+      title: 'Hồ sơ',
       url: '/owner-detail',
       // icon: 'assets/icon-image/user.svg',
       icon: 'person',
       for: 1
     },
     {
-      title: 'Subscription',
+      title: 'Đăng ký',
       url: '/plan-detail',
       // icon: 'assets/icon-image/user.svg',
       icon: 'card',
       for: 2
     },
     {
-      title: 'Security Guard',
+      title: 'Quảng lý bảo vệ',
       url: '/guard-list',
       // icon: 'assets/icon-image/policeman.svg',
       icon: 'contacts',
       for: 2
     },
     {
-      title: 'Add New Space',
+      title: 'Quảng lý bãi xe',
       url: '/park-address',
       // icon: 'assets/icon-image/menu-pin.svg',
       icon: 'pin',
       for: 2
     },
     {
-      title: 'Transaction',
+      title: 'Giao dịch',
       url: '/transaction',
       // icon: 'assets/icon-image/dollar-coin.svg',
       icon: 'logo-usd',
       for: 1
     },
     {
-      title: 'Images',
+      title: 'Hình ảnh',
       url: '/images',
       // icon: 'assets/icon-image/dollar-coin.svg',
       icon: 'images',
@@ -71,7 +71,7 @@ export class AppComponent {
       for: 1
     },
     {
-      title: 'Scanner',
+      title: 'Quét QR',
       url: '/scanner',
       // icon: 'assets/icon-image/scannner-menu.svg',
       icon: 'barcode',

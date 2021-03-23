@@ -7,12 +7,12 @@
     <ion-buttons slot="end">
       <ng-container *ngIf="!addNew">
         <ion-button (click)="addNew = true">
-          <ion-label class="show-sm">Add</ion-label>
+          <ion-label class="show-sm">Thêm</ion-label>
           <ion-icon class="show-sm" name="add" slot="end"></ion-icon>
           <ion-icon class="hide-sm" name="add" slot="icon-only"></ion-icon>
         </ion-button>
         <ion-button (click)="backMe()">
-          <ion-label class="show-sm">Back</ion-label>
+          <ion-label class="show-sm">Thoát</ion-label>
           <ion-icon class="show-sm" name="undo" slot="end"></ion-icon>
           <ion-icon class="hide-sm" name="undo" slot="icon-only"></ion-icon>
         </ion-button>
@@ -20,12 +20,12 @@
       <ng-container *ngIf="addNew">
 
         <ion-button (click)="newData={};addNew=false">
-          <ion-label class="show-sm">Cancel</ion-label>
+          <ion-label class="show-sm">Huỷ bỏ</ion-label>
           <ion-icon class="show-sm" name="close" slot="end"></ion-icon>
           <ion-icon class="hide-sm" name="close" slot="icon-only"></ion-icon>
         </ion-button>
         <ion-button (click)="saveNewZone()">
-          <ion-label class="show-sm">Save</ion-label>
+          <ion-label class="show-sm">Lưu</ion-label>
           <ion-icon class="show-sm" name="thumbs-up" slot="end"></ion-icon>
           <ion-icon class="hide-sm" name="thumbs-up" slot="icon-only"></ion-icon>
         </ion-button>

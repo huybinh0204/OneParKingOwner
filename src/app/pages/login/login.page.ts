@@ -56,6 +56,8 @@ export class LoginPage implements OnInit {
             localStorage.removeItem('password');
             localStorage.setItem('remember', 'false');
           }
+          console.log("login----",res)
+          console.log("login----",res.data.token)
           this.api.presentToast(res.msg);
           this.api.generateURL();
           window.location.reload();

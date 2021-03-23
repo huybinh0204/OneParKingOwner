@@ -5,7 +5,7 @@
 
 
     </ion-buttons>
-    <ion-title>Scanner</ion-title>
+    <ion-title>QR Code</ion-title>
 
   </ion-toolbar>
 </ion-header>
@@ -14,7 +14,7 @@
 <ion-content>
   <div class="barcode_div" *ngIf="!booking.id">
 
-    <p class="scan_p">Scan user barcode</p>
+    <p class="scan_p">Quét mã QR</p>
     <zxing-scanner (scanSuccess)="scanCompleteHandler($event)">
     </zxing-scanner>
 
@@ -32,64 +32,62 @@
           <div class="id_div">
             <h3 class="text">
               <ng-container *ngIf="booking?.payment_status == '0' ">
-                Waiting For Payment
+                Đang chờ thanh toán
               </ng-container>
               <ng-container *ngIf="booking?.payment_status == '1' ">
-                Payment successfully
+                Thanh toán thành công
               </ng-container>
               <ng-container *ngIf="booking?.payment_status == '2' ">
-                Payment Rejected
+                Thanh toán bị từ chối
               </ng-container>
             </h3>
 
             <p class="id_p">ID No. {{booking?.order_no}}</p>
-
-
-            <ion-button shape="round" fill="outline" color="secondary" *ngIf="booking?.status == '0'">Booked
+            <ion-button shape="round" fill="outline" color="secondary" *ngIf="booking?.status == '0'">Đã đặt trước
             </ion-button>
-            <ion-button shape="round" fill="outline" color="tertiary" *ngIf="booking?.status == '1'">In Parking
+            <ion-button shape="round" fill="outline" color="tertiary" *ngIf="booking?.status == '1'">Trong bãi đậu xe
             </ion-button>
-            <ion-button shape="round" fill="outline" color="danger" *ngIf="booking?.status == '3'">Cancel
+            <ion-button shape="round" fill="outline" color="danger" *ngIf="booking?.status == '3'">Huỷ bỏ
             </ion-button>
-            <ion-button shape="round" fill="outline" color="success" *ngIf="booking?.status == '2'">Complete
+            <ion-button shape="round" fill="outline" color="success" *ngIf="booking?.status == '2'">Hoàn thành
             </ion-button>
           </div>
           <div class="date_div">
             <div class="date">
-              <h3 class="label">Arriving time</h3>
+              <h3 class="label">Thời gian vào bãi</h3>
               <p class="data">{{booking?.arriving_time}}</p>
             </div>
             <div class="time">
-              <h3 class="label">Leaving time</h3>
+              <h3 class="label">Thời gian ra</h3>
               <p class="data">{{booking?.leaving_time}}</p>
             </div>
             <div class="price">
-              <h3 class="label">Price</h3>
+              <h3 class="label">Giá</h3>
               <p class="data">${{booking?.total_amount}}</p>
             </div>
           </div>
           <div class="name_div">
             <h3 class="name">{{booking?.user?.name}}</h3>
-            <p class="car">Vehicle Type: {{booking?.vehicle?.model}}
-              <span class="ion-float-right">Vehicle Number: {{booking?.vehicle?.vehicle_no}}</span></p>
+            <p class="car">Loại phương tiện: {{booking?.vehicle?.model}}
+              <span class="ion-float-right">Số xe: {{booking?.vehicle?.vehicle_no}}</span></p>
           </div>
           <div class="ion-text-center">
-            <ion-button (click)="changeStatus(1,booking?.payment_status)" *ngIf="booking?.status == '0'">
+            <ion-button (click)="changeStatus(1,booking?.payment_status,1)" *ngIf="booking?.status == '0'">
               <ion-icon slot="start" name="arrow-dropright"></ion-icon>
               Check In
             </ion-button>
-            <ion-button (click)="changeStatus(2,booking?.payment_status)" *ngIf="booking?.status == '1'">
+            <ion-button (click)="changeStatus(2,booking?.payment_status,2)" *ngIf="booking?.status == '1'">
               <ion-icon slot="start" name="checkmark"></ion-icon>
               Check Out
             </ion-button>
-            <ion-button (click)="changeStatus(3,booking?.payment_status)" color="danger" *ngIf="booking?.status == '0'">
+            <ion-button (click)="changeStatus(3,booking?.payment_status,null)" color="danger" *ngIf="booking?.status == '0'">
               <ion-icon slot="start" name="close"></ion-icon>
-              Cancel
+              Huỷ bỏ
             </ion-button>
-            <ion-button (click)="changeStatus(booking?.status,1)" color="success"
+            <ion-button (click)="changeStatus(booking?.status,1,booking?.type)" color="success"
               *ngIf="booking?.payment_status != '1'">
               <ion-icon slot="start" name="card"></ion-icon>
-              Payment
+              Thanh toán
             </ion-button>
           </div>
         </div>

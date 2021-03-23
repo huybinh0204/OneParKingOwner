@@ -6,13 +6,13 @@
                 <div class="ion-text-center  logo_div">
 <!--                    <img src="assets/image/logo.png">-->
                     <h3 class="logo_text"><span>O</span>ne<span>P</span>ark</h3>
-                    <h3 class="signin">SIGN UP</h3>
+                    <h3 class="signin">ĐĂNG KÝ</h3>
                 </div>
 
                 <form autocomplete="off">
                     <ion-item lines="none" class="item_div">
-                        <ion-label position="stacked" class="lbl_name" mode="md">Name</ion-label>
-                        <ion-input [(ngModel)]="modelData.name" required type="text" placeholder="Your name"
+                        <ion-label position="stacked" class="lbl_name" mode="md">Tên</ion-label>
+                        <ion-input [(ngModel)]="modelData.name" required type="text" placeholder="Tên của bạn"
                             name="name">
                         </ion-input>
                         <strong color="danger" *ngIf="error.name">{{error.name['0']}}</strong>
@@ -38,7 +38,7 @@
 
                     <ion-button class="otp_btn signin_btn" mode="md" expand="full" shape="round" fill="solid"
                         (click)="login()">
-                        Sign up
+                        Đăng ký
                     </ion-button>
                 </form>
                 <div class="or">
@@ -55,8 +55,8 @@
                         <ion-icon name="logo-twitter"></ion-icon>
                     </ion-button> -->
                     <div class="account_div">
-                        <span class="text">Need an Account?</span>
-                        <ion-button type="button" class="trans-btn last_button" (click)="login()">Sign in</ion-button>
+                        <span class="text">Đã có tài khoản?</span>
+                        <ion-button type="button" class="trans-btn last_button" (click)="login()">Đăng nhập</ion-button>
                     </div>
                 </div>
             </ion-col>

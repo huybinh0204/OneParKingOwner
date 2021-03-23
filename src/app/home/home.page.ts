@@ -14,7 +14,7 @@ export class HomePage {
   mySpaceData: any = {};
   bookingData: any = [];
   type = 'owner';
-  constructor(private ntrl: NavController, private menu: MenuController, private api: ApiService, 
+  constructor(private ntrl: NavController, private menu: MenuController, private api: ApiService,
               private androidPermissions: AndroidPermissions) {
     this.menu.enable(true);
     this.id = localStorage.getItem('defaultParking');
@@ -26,11 +26,11 @@ export class HomePage {
 
     this.api.startLoader()
     this.api.authGetReq('space/' + this.id).subscribe((res: any) => {
-      console.log('res', res);
+      console.log('res1', res);
       this.api.dismissLoader()
 
       this.mySpaceData = res.data.space;
-      this.bookingData = res.data.booking;
+        this.bookingData = res.data.booking;
     }, err => {
       this.api.dismissLoader();
 

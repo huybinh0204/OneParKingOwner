@@ -48,7 +48,7 @@ export class SpaceHeaderComponent implements OnInit {
   }
   async presentAlertRadio() {
     const alert = await this.alertController.create({
-      header: 'Your Parking Space',
+      header: 'Bãi đậu xe của bạn',
       inputs: this.mySpace,
       buttons: [
         {

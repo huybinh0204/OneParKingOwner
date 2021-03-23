@@ -39,10 +39,12 @@ export class ApiService {
   }
   public postWithAuth(endPoint: string, data: any) {
     console.log("postWithAuth",endPoint);
+    console.log("postWithAuth",this.baseURL+endPoint);
     return this.http.post(`${this.baseURL}${endPoint}`, data);
   }
   public getWithAuth(endPoint: string) {
     console.log("getWithAuth",endPoint);
+    console.log("getWithAuth",this.baseURL+endPoint);
     return this.http.get(`${this.baseURL}${endPoint}`);
   }
   async presentToast(msg) {
@@ -59,6 +61,7 @@ export class ApiService {
     headers = headers.set('Authorization', tok);
     headers = headers.set('Accept', 'application/json');
     console.log("authPostReq",endPoint);
+    console.log("authPostReq",this.baseURL+endPoint);
     return this.http.post(`${this.baseURL}${endPoint}`, data, { headers });
   }
   public authPostReqImageUpoad(endPoint: string, data: any) {
@@ -67,6 +70,8 @@ export class ApiService {
     headers = headers.set('Authorization', tok);
     headers = headers.set('Content-Type', 'multipart/form-data');
     headers = headers.set('Accept', 'application/json');
+    console.log("authPostReqImageUpoad",this.baseURL+endPoint);
+    console.log("authPostReqImageUpoad",this.baseURL+endPoint);
     return this.http.post(`${this.baseURL}${endPoint}`, data, { headers });
   }
   public authUpdateReq(endPoint: string, data: any) {
@@ -77,6 +82,9 @@ export class ApiService {
     headers = headers.set('Authorization', tok);
     headers = headers.set('Accept', 'application/json');
     console.log("authUpdateReq",endPoint);
+    console.log("authUpdateReq",this.baseURL+endPoint);
+    console.log("token",tok);
+    console.log("Authorization",headers);
     return this.http.put(`${this.baseURL}${endPoint}`, data, { headers });
   }
   public authDeleteReq(endPoint: string) {
@@ -87,6 +95,7 @@ export class ApiService {
     headers = headers.set('Authorization', tok);
     headers = headers.set('Accept', 'application/json');
     console.log("authDeleteReq",endPoint);
+    console.log("authDeleteReq",this.baseURL+endPoint);
     return this.http.delete(`${this.baseURL}${endPoint}`, { headers });
   }
   public authGetReq(endPoint: string) {
@@ -95,6 +104,7 @@ export class ApiService {
     headers = headers.set('Authorization', tok);
     headers = headers.set('Accept', 'application/json');
     console.log("authGetReq",endPoint);
+    console.log("authGetReq",this.baseURL+endPoint);
     return this.http.get(`${this.baseURL}${endPoint}`, { headers });
   }
   public generateURL() {

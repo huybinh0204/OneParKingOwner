@@ -30,9 +30,9 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar placeholder="Search..." clearIcon="string" [(ngModel)]="search"></ion-searchbar>
+  <ion-searchbar placeholder="Tìm kiếm..." clearIcon="string" [(ngModel)]="search"></ion-searchbar>
 
-  <ion-label class="user_p ion-margin" color="primary">Assign Guard</ion-label>
+  <ion-label class="user_p ion-margin" color="primary">Bảo vệ</ion-label>
   <!-- <div class="sedan"> -->
   <div class="ion-margin" style="    display: flex;
     overflow-x: auto;">
@@ -72,7 +72,7 @@
     </div> -->
   </div>
   <div class="user_div ion-margin-horizontal">
-    <p class="user_p">Booked User <span class="ion-float-right">Today</span></p>
+    <p class="user_p">Khách hàng đặt chỗ<span class="ion-float-right">Hôm nay</span></p>
 
     <div class="card_div" *ngFor="let item of bookingData |filter:search" (click)="bookingDisplay(item.id)">
       <div class="img_div">
