@@ -10,23 +10,23 @@ ion-content{
                     margin-right: 16px;
                 .slide_name{
                     font-size: 18px;
-                    font-family: 'Rubik_Medium';
+                    //font-family: 'Rubik_Medium';
                     color: var(--ion-color-darkblue);
                     margin-top: 70px;
                 }
                 .slide_info{
                     font-size: 12px;
-                    font-family: 'Rubik_Regular';
+                    //font-family: 'Rubik_Regular';
                     color: var(--ion-color-sky);
                     line-height: 20px;
                 }
                 .first_h3{
                     margin-top: 95px;
                 }
-            
+
             }
         }
-      
+
     }
     .skip{
         --border-radius: 25px;

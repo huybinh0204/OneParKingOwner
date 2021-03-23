@@ -5,12 +5,12 @@ ion-content {
         .tittle {
             font-size: 20px;
             color: var(--ion-color-darkblue);
-            font-family: 'Rubik_Medium';
+            //font-family: 'Rubik_Medium';
         }
 
         .text {
             font-size: 14px;
-            font-family: 'Rubik_Regular';
+            //font-family: 'Rubik_Regular';
             color: var(--ion-color-sky);
             width: 80%;
             margin: auto;
@@ -22,7 +22,7 @@ ion-content {
 
         .form_p {
             font-size: 16px;
-            font-family: 'Rubik_Medium';
+            //font-family: 'Rubik_Medium';
             color: var(--ion-color-darkblue);
             margin-bottom: 0px;
         }
@@ -35,7 +35,7 @@ ion-content {
             .lbl_name {
                 font-size: 20px;
                 color: var(--ion-color-blue);
-                font-family: 'Rubik_Medium';
+                //font-family: 'Rubik_Medium';
                 margin-bottom: 5px;
                 margin-top: 5px;
 
@@ -43,7 +43,7 @@ ion-content {
 
             ion-input {
                 font-size: 16px;
-                font-family: 'Rubik_Medium';
+                //font-family: 'Rubik_Medium';
                 --color: var(--ion-color-darkblue);
             }
 
@@ -53,7 +53,7 @@ ion-content {
     .type_p {
         font-size: 16px;
         color: var(--ion-color-darkblue);
-        font-family: 'Rubik_Medium';
+        //font-family: 'Rubik_Medium';
     }
 
     .type_div {
@@ -71,7 +71,7 @@ ion-content {
 
             ion-button {
                 font-size: 14px;
-                font-family: 'Rubik_Medium';
+                //font-family: 'Rubik_Medium';
                 --color: var(--ion-color-blue);
                 --background: transparent;
                 height: 100%;

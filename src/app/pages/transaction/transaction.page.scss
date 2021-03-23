@@ -9,12 +9,12 @@ ion-content{
             width: 25%;
             .distance{
               font-size: 14px;
-              font-family: 'Rubik_Medium';
+              //font-family: 'Rubik_Medium';
               color: var(--ion-color-darkblue);
               text-align: center;
                 margin:0px;
             }
-         
+
         }
         .dot_div{
               width: 12.5%;
@@ -31,23 +31,23 @@ ion-content{
     ion-row{
         //border-top: dashed 1px var(--ion-color-sky);
         border-bottom: dashed 1px var(--ion-color-sky);
-      
-      
+
+
         ion-col{
-    
+
             .tittle{
                 font-size: 14px;
-                font-family: 'Rubik_Medium';
+                //font-family: 'Rubik_Medium';
                 color: var(--ion-color-darkblue);
                 text-align: center;
                 margin-bottom: 0px;
             }
-           
+
             ion-datetime{
               text-align: center;
              padding-left: 0;
              font-size: 14px;
-             font-family: 'Rubik_Medium';
+             //font-family: 'Rubik_Medium';
              color: var(--ion-color-blue);
             }
         }
@@ -58,17 +58,17 @@ ion-content{
     .data_div{
         .user_p{
             font-size: 16px;
-            font-family: 'Rubik_Medium';
+            //font-family: 'Rubik_Medium';
             color: var(--ion-color-blue);
         }
         ion-item{
             padding-right: 16px;
             --inner-padding-end: 0px;
-        
+
             .name_p{
                 font-size: 14px;
                 color: var(--ion-color-darkblue);
-                font-family: 'Rubik_Medium';
+                //font-family: 'Rubik_Medium';
                 width: 100%;
             }
         }
@@ -85,9 +85,9 @@ ion-content{
                 width: 100%;
                 padding: 0px 16px;
             }
-        
+
         }
-    
+
     }
 }
 
@@ -99,12 +99,12 @@ ion-footer{
         align-items: center;
         p{
             font-size: 18px;
-            font-family: 'Rubik_Medium';
+            //font-family: 'Rubik_Medium';
             color: var(--ion-color-white);
             width: 100%;
             padding: 0px 16px;
             text-transform: uppercase;
         }
-    }    
+    }
 
 }

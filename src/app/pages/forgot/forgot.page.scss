@@ -2,7 +2,7 @@ ion-content{
     .main_div{
         margin-top: 30px;
          p{
-            font-family: 'Rubik_Medium';
+            //font-family: 'Rubik_Medium';
             color: var(--ion-color-darkblue);
             font-size: 16px;
         }
@@ -21,7 +21,7 @@ ion-content{
                     font-size: 16px;
                     --placeholder-font-style:  'Rubik_Regular';
                     --placeholder-opacity:1;
-                    font-family:  'Rubik_Regular';
+                    //font-family:  'Rubik_Regular';
                 }
         }
         ion-button{

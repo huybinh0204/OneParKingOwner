@@ -2,10 +2,10 @@ ion-content{
     .logo_div{
         margin-top: 25px;
         position: relative;
-       
+
         .logo_text{
             font-size: 50px;
-            font-family: 'Rubik_Medium_I';
+            //font-family: 'Rubik_Medium_I';
             color: var(--ion-color-darkblue);
             margin-top: 10px;
             span{
@@ -15,28 +15,28 @@ ion-content{
         }
         .signin{
             font-size: 30px;
-            font-family: 'WorkSans_Bold';
+            //font-family: 'WorkSans_Bold';
             color: var(--ion-color-darkblue);
         }
 
-     
+
     }
 
     form{
         padding-left: 16px;
         padding-right: 16px;
         padding-top: 10px;
-       
-    
+
+
         .item_div {
             --padding-start: 0px;
             border-bottom: 1px solid var(--ion-color-borderline);
             --inner-padding-end: 0;
-           
+
             .lbl_name {
                 font-size: 20px;
                 color: var( --ion-color-darkblue);
-                font-family: 'Rubik_Medium';
+                //font-family: 'Rubik_Medium';
                 margin-bottom: 5px;
                 margin-top: 5px;
                 font-weight: 600;
@@ -46,7 +46,7 @@ ion-content{
                 --placeholder-font-style:'Rubik_Regular';
                 --placeholder-opacity: 1;
                 font-size: 16px;
-                font-family: 'Rubik_Regular';
+                //font-family: 'Rubik_Regular';
             }
             .trans-btn{
                 color: var(--ion-color-gray);
@@ -70,13 +70,13 @@ ion-content{
                     display: flex;
                     .remember{
                         font-size: 14px;
-                        font-family: 'Rubik_Regular';
+                        //font-family: 'Rubik_Regular';
                         color:var(--ion-color-placeholder);
                     }
                 }
             .forgot-btn{
                 font-size: 14px;
-                font-family: 'Rubik_Regular';
+                //font-family: 'Rubik_Regular';
                 --color: var(--ion-color-black);
             }
 
@@ -92,7 +92,7 @@ ion-content{
     .or {
         h2 {
             font-size: 18px;
-            font-family: 'WorkSans_Medium';
+            //font-family: 'WorkSans_Medium';
             color: var(--ion-color-gray);
             margin-top: 30px;
             text-align: center;
@@ -187,8 +187,8 @@ ion-content{
       margin-top: 20px;
         .twitter {
             --background: var(--ion-color-twiter-btn);
-          
-          
+
+
             ion-icon {
                 width: 14px;
                 height: 11px;
@@ -196,7 +196,7 @@ ion-content{
         }
         .facbook {
             --background: var(--ion-color-facebook-btn);
-           
+
             ion-icon {
                 width: 7px;
                 height: 13px;
@@ -205,7 +205,7 @@ ion-content{
         .google {
             --background: var(--ion-color-google-btn);
          margin: 0px 20px;
-          
+
             ion-icon {
                 width: 18px;
                 height: 12px;
@@ -218,7 +218,7 @@ ion-content{
             --padding-start: 0px;
             --padding-end:0px;
             --box-shadow:none;
-       
+
         }
         .account_div{
             margin-top: 15px;
@@ -228,13 +228,13 @@ ion-content{
             .last_button{
                     --color:var( --ion-color-darkblue);
                     font-size: 16px;
-                    font-family: 'Rubik_Medium';
+                    //font-family: 'Rubik_Medium';
                     text-transform: capitalize;
                     margin-left: 4px;
             }
             .text{
                 font-size: 16px;
-                font-family: 'Rubik_Regular';
+                //font-family: 'Rubik_Regular';
                 color: var( --ion-color-darkblue);
             }
         }
