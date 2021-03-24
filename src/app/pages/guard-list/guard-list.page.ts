@@ -31,6 +31,16 @@ export class GuardListPage implements OnInit {
       console.error('err', err);
     });
   }
+  presentModal() {
+    this.api.startLoader();
+    this.api.authGetReq('guard').subscribe((res: any) => {
+      this.data = res.data;
+      this.api.dismissLoader();
+    }, err => {
+      this.api.dismissLoader();
+      console.error('err', err);
+    });
+  }
   addNewGuard() {
     this.ntrl.navigateForward('park-guard');
   }

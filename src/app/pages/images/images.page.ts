@@ -66,14 +66,15 @@ export class ImagesPage implements OnInit {
     });
   }
   deleteImage(id) {
-    this.api.authDeleteReq('images/' + id).subscribe((res: any) => {
-
+    const data = {
+      id:id
+    }
+    this.api.authDeleteReq('delete/images' ,data).subscribe((res: any) => {
       if (res.success === true) {
         this.api.presentToast(res.msg);
         this.initImage();
 
       }
-
     }, err => {
       console.error('err', err);
 

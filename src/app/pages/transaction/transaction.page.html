@@ -14,7 +14,7 @@
         <ion-icon class="show-sm" name="cash"></ion-icon>
         &nbsp; <ion-icon class="hide-sm" name="cash"></ion-icon>
         &nbsp;
-        <ion-label>${{transactionData.grandTotal}}</ion-label>
+        <ion-label>{{transactionData.grandTotal}}</ion-label>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -48,20 +48,20 @@
     <ion-col class="first_col">
       <h3 class="tittle">Ngày bắt đầu</h3>
 
-      <ion-datetime displayFormat="MMM D, hh:mm a" placeholder="November 1" [(ngModel)]="sort_data.start_date">
+      <ion-datetime displayFormat="DD-MM HH:mm" placeholder="November 1" [(ngModel)]="sort_data.start_date">
       </ion-datetime>
 
     </ion-col>
     <ion-col>
-      <h3 class="tittle">Ngày cuối</h3>
-      <ion-datetime placeholder="December 30" pickerFormat="MMM D, hh:mm a" displayFormat="MMM D, hh:mm a"
+      <h3 class="tittle">Ngày kết thúc</h3>
+      <ion-datetime placeholder="December 30" pickerFormat="MMM D, hh:mm a" displayFormat="DD-MM HH:mm"
         [(ngModel)]="sort_data.end_date"></ion-datetime>
     </ion-col>
   </ion-row>
   <div class="data_div">
     <p class="user_p ion-margin-horizontal">Tên tài khoản <span class="ion-float-right" (click)="searchMe()">Tìm kiếm ngày</span></p>
     <ion-item *ngFor="let item of transactionData.data | filter:search">
-      <p class="name_p">{{item?.user?.name}}<span class="ion-float-right">${{item?.total}}</span></p>
+      <p class="name_p">{{item?.user?.name}}<span class="ion-float-right">{{item?.total}}vnđ</span></p>
     </ion-item>
 
   </div>

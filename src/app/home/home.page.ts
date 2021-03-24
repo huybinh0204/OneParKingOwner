@@ -22,9 +22,7 @@ export class HomePage {
   }
 
   ionViewWillEnter() {
-
-
-    this.api.startLoader()
+    this.api.startLoader();
     this.api.authGetReq('space/' + this.id).subscribe((res: any) => {
       console.log('res1', res);
       this.api.dismissLoader()

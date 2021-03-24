@@ -35,14 +35,14 @@ export class AppComponent {
       for: 2
     },
     {
-      title: 'Quảng lý bảo vệ',
+      title: 'Quản lý bảo vệ',
       url: '/guard-list',
       // icon: 'assets/icon-image/policeman.svg',
       icon: 'contacts',
       for: 2
     },
     {
-      title: 'Quảng lý bãi xe',
+      title: 'Quản lý bãi xe',
       url: '/park-address',
       // icon: 'assets/icon-image/menu-pin.svg',
       icon: 'pin',

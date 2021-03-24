@@ -25,7 +25,7 @@
                         <strong color="danger" *ngIf="error.email">{{error.email['0']}}</strong>
                     </ion-item>
                     <ion-item lines="none" class="item_div">
-                        <ion-label position="stacked" class="lbl_name" mode="md">Password</ion-label>
+                        <ion-label position="stacked" class="lbl_name" mode="md">Mật khẩu</ion-label>
                         <ion-input required [(ngModel)]="modelData.password" name="password" type="Password"
                             placeholder="*  *  *  *  *  *">
                         </ion-input>
@@ -42,7 +42,7 @@
                     </ion-button>
                 </form>
                 <div class="or">
-                    <h2 class="background"><span>or</span></h2>
+                    <h2 class="background"><span>Hoặc</span></h2>
                 </div>
                 <div class="last-div ion-text-center">
                     <!-- <ion-button class="facbook social">
@@ -56,7 +56,7 @@
                     </ion-button> -->
                     <div class="account_div">
                         <span class="text">Đã có tài khoản?</span>
-                        <ion-button type="button" class="trans-btn last_button" (click)="login()">Đăng nhập</ion-button>
+                        <ion-button type="button" class="trans-btn last_button" (click)="signup()">Đăng nhập</ion-button>
                     </div>
                 </div>
             </ion-col>

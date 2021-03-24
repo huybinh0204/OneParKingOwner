@@ -19,6 +19,10 @@ export class SignupPage implements OnInit {
   }
 
   ngOnInit() {
+
+  }
+  signup() {
+    this.ntrl.navigateForward(['login']);
   }
   login() {
     this.api.startLoader();

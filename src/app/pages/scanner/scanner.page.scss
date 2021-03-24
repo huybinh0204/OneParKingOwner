@@ -37,11 +37,11 @@ ion-content {
             padding: 10px 0px;
 
             .text {
-                font-size: 16px;
+                font-size: 15px;
                 //font-family: 'Rubik_Medium';
                 color: var(--ion-color-darkblue);
-                margin-bottom: 0px;
-                margin-top: 20px;
+                //margin-bottom: 0px;
+                //margin-top: 20px;
             }
 
             .id_p {
@@ -50,6 +50,10 @@ ion-content {
                 color: var(--ion-color-blue);
                 margin-top: 10px;
             }
+        }
+        .p{
+            margin: 5px;
+            padding: 0;
         }
 
         .date_div {

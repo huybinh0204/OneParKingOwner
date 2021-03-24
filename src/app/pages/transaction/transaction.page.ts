@@ -51,6 +51,7 @@ export class TransactionPage implements OnInit {
         .authPostReq(`transaction/${id}/custom`, this.sort_data)
         .subscribe(
           (res: any) => {
+            // console.log("222",res);
             this.api.dismissLoader();
 
             this.transactionData = res.data;

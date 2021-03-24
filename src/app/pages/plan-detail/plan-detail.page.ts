@@ -81,8 +81,10 @@ export class PlanDetailPage implements OnInit {
   }
   deleteCard(id) {
     this.api.startLoader();
-
-    this.api.authDeleteReq('card/' + id).subscribe((res: any) => {
+    const data = {
+      id:id
+    }
+    this.api.authDeleteReq('delete/card',data).subscribe((res: any) => {
       this.api.dismissLoader();
 
       if (res.success === true) {

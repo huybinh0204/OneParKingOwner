@@ -27,8 +27,8 @@ export class ApiService {
   async startLoader() {
     this.loadingController
         .create({
-          duration: 10000,
-          message: `Please Wait`
+          duration: 1000,
+          message: ``
         })
         .then(a => {
           a.present().then(() => {});
@@ -85,18 +85,17 @@ export class ApiService {
     console.log("authUpdateReq",this.baseURL+endPoint);
     console.log("token",tok);
     console.log("Authorization",headers);
-    return this.http.put(`${this.baseURL}${endPoint}`, data, { headers });
+    return this.http.post(`${this.baseURL}${endPoint}`, data, { headers });
   }
-  public authDeleteReq(endPoint: string) {
+  public authDeleteReq(endPoint: string,data:any) {
     // data._method = "PUT";
-
     const tok = 'Bearer ' + localStorage.getItem('token');
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', tok);
     headers = headers.set('Accept', 'application/json');
     console.log("authDeleteReq",endPoint);
     console.log("authDeleteReq",this.baseURL+endPoint);
-    return this.http.delete(`${this.baseURL}${endPoint}`, { headers });
+    return this.http.post(`${this.baseURL}${endPoint}`, data, { headers });
   }
   public authGetReq(endPoint: string) {
     const tok = 'Bearer ' + localStorage.getItem('token');

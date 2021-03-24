@@ -72,13 +72,13 @@
     </div> -->
   </div>
   <div class="user_div ion-margin-horizontal">
+<!--    ng-class="background: #d33939"-->
     <p class="user_p">Khách hàng đặt chỗ<span class="ion-float-right">Ngày đặt</span></p>
-
-    <div class="card_div" *ngFor="let item of bookingData |filter:search" (click)="bookingDisplay(item.id)">
+    <div class="card_div" style="border-bottom: solid 1px #e0b500"  *ngFor="let item of bookingData |filter:search" (click)="bookingDisplay(item.id)">
       <div class="img_div">
-        <img [src]="item?.user?.imageUri" width="75" height="75">
+        <img [src]="item?.user?.imageUri" width="75" height="75" >
       </div>
-      <div class="data_div">
+      <div class="data_div" >
         <h3 class="name">{{item?.user.name}} <span class="ion-float-right">{{item?.total_amount}}vnđ</span></h3>
         <p class="id_p">
           <ion-icon src="assets/icon-image/card-img.svg"></ion-icon> ID No. {{item?.order_no}}
@@ -93,8 +93,8 @@
           <!-- <span class="ion-float-right">Zone - A3</!-->
         </p>
       </div>
-
     </div>
+
   </div>
 
 </ion-content>

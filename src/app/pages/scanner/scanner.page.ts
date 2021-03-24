@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { ModalController,NavController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from './../../service/api.service';
 import { ZXingScannerComponent } from '@zxing/ngx-scanner';
 import { BehaviorSubject } from 'rxjs';
 import { BarcodeFormat } from '@zxing/library';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
-
+import {DeleteModalPage} from '../delete-modal/delete-modal.page';
 @Component({
   selector: 'app-scanner',
   templateUrl: './scanner.page.html',
@@ -36,7 +36,9 @@ export class ScannerPage implements OnInit {
   id: string;
   booking: any = {};
   scanner: ZXingScannerComponent;
-  constructor(private ntrl: NavController,
+  constructor(
+      private modalController: ModalController,
+      private ntrl: NavController,
     public activeRoute: ActivatedRoute, private api: ApiService, private androidPermissions: AndroidPermissions) {
     this.id = this.activeRoute.snapshot.paramMap.get('id');
 
@@ -111,6 +113,7 @@ export class ScannerPage implements OnInit {
       this.api.authGetReq('booking/' + this.id).subscribe((res: any) => {
 
         this.booking = res.data;
+        console.log("booking",res.data)
         this.api.dismissLoader();
 
       }, err => {
@@ -130,10 +133,10 @@ export class ScannerPage implements OnInit {
   }
   getBookingDetail(e) {
     this.api.startLoader();
-
     this.api.authGetReq('booking/scanner/' + e).subscribe((res: any) => {
-      console.log("booking/scanner",res.data)
+      // console.log("booking/scanner",res.data)
       this.booking = res.data;
+      console.log("11111",res.data);
       this.api.dismissLoader();
 
     }, err => {
@@ -150,18 +153,45 @@ export class ScannerPage implements OnInit {
       payment_status: paymentStatus,
       type:type,
     };
-    alert(data)
-    this.api.authPostReq('booking/' + this.booking.id + '/update', data).subscribe((res: any) => {
+    console.log("data booking ====",data);
 
+    this.api.authPostReq('booking/' + this.booking.id + '/update', data).subscribe((res: any) => {
       this.booking = res.data;
-      this.api.dismissLoader();
+      console.log("11111",res.data);
+      if (res.success == true){
+        this.api.dismissLoader();
+        this.ngOnInit();
+      }else {
+        console.log("msg",res);
+      }
 
     }, err => {
-      alert(err)
+      // alert(err)
       console.error('err', err);
       this.api.dismissLoader();
 
     });
   }
+  async presentModal(id) {
+    const modal = await this.modalController.create({
+      component: DeleteModalPage,
+      cssClass: 'mymodal',
+      showBackdrop: false,
+      componentProps: {
+        id: id,
+        path: 'vehicle'
+      }
+    });
+    modal.onDidDismiss().then(data => {
+      // sliding.close();
+      console.log('dismissed', data);
+      if (data.data && data.data.deleted === true) {
+        // this.getUserVehicle();
 
+      }
+    });
+
+    return await modal.present();
+
+  }
 }

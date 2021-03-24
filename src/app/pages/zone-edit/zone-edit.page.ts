@@ -47,7 +47,12 @@ export class ZoneEditPage implements OnInit {
     });
   }
   deleteZone(id) {
-    this.api.authDeleteReq(`zone/${id}`).subscribe((res: any) => {
+    this.api.startLoader();
+    const data = {
+      id:id
+    }
+    console.log('deleteZone',data);
+    this.api.authDeleteReq(`delete/zone`,data).subscribe((res: any) => {
       if (res.success === true) {
         this.api.presentToast(res.msg);
         this.getZoneData();
@@ -60,6 +65,7 @@ export class ZoneEditPage implements OnInit {
 
   }
   editSlot(id, name) {
+    this.api.startLoader();
     this.api.authUpdateReq(`slot/${id}/update`, { name }).subscribe((res: any) => {
       if (res.success === true) {
         this.api.presentToast(res.msg);
@@ -70,7 +76,12 @@ export class ZoneEditPage implements OnInit {
 
   }
   deleteSlot(id) {
-    this.api.authDeleteReq(`slot/${id}`).subscribe((res: any) => {
+    this.api.startLoader();
+    const data = {
+      id:id
+    }
+    console.log('deleteSlot',data);
+    this.api.authDeleteReq(`delete/slot`,data).subscribe((res: any) => {
       if (res.success === true) {
         this.api.presentToast(res.msg);
         this.getZoneData();
