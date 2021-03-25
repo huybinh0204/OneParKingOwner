@@ -75,7 +75,10 @@
               <span class="ion-float-right">Số xe: {{booking?.vehicle?.vehicle_no}}</span></p>
           </div>
           <div class="ion-text-center">
-            <ion-button (click)="changeStatus(1,0,1)" *ngIf="booking?.status == '0'">
+            <ion-button (click)="changeStatus(1,0,1)" *ngIf="booking?.status == '0' && booking?.checkin == true">
+              <ion-icon slot="start" name="arrow-dropright"></ion-icon>Check In
+            </ion-button>
+            <ion-button *ngIf="booking?.status == '0' && booking?.checkin == false">
               <ion-icon slot="start" name="arrow-dropright"></ion-icon>Check In
             </ion-button>
             <ion-button (click)="changeStatus(2,1,2)" *ngIf="booking?.status == '1' && booking?.payment?.success == true">

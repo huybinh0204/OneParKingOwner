@@ -37,21 +37,19 @@ export class HomePage {
     this.menu.enable(true);
     this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.CAMERA]).then(() => {}, (err) => {});
   }
-  parkDetailDisplay(id) {
-    // this.ntrl.navigateForward('park-detail/' + id);
 
-  }
 
   mapView() {
     this.ntrl.navigateForward('home-map');
   }
   editSpace() {
     this.ntrl.navigateForward('edit-space');
-
   }
   bookingDisplay(id) {
     this.ntrl.navigateForward('scanner/' + id);
-
+  }
+  parkDetailDisplay(id) {
+    this.ntrl.navigateForward('list-details/'+id);
   }
   parkingView() {
     this.ntrl.navigateForward('live-parking');

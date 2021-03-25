@@ -70,13 +70,13 @@ export class AppComponent {
       icon: 'barcode',
       for: 1
     },
-    // {
-    //   title: 'Hồ sơ',
-    //   url: '/owner-detail',
-    //   // icon: 'assets/icon-image/user.svg',
-    //   icon: 'person',
-    //   for: 1
-    // },
+    {
+      title: 'Hồ sơ',
+      url: '/owner-detail',
+      // icon: 'assets/icon-image/user.svg',
+      icon: 'person',
+      for: 1
+    },
   ];
   profileData: any = {};
   type = 'owner';

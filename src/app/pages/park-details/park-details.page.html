@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar mode="md" color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Chi Tiết Bảo Vệ</ion-title>
+        <ion-buttons slot="end">
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-grid class="ion-no-padding">
+        <ion-row>
+            <ion-col sizeSm="12" sizeXl="8" sizeLg="10" sizeMd="10" pushLg="1" pushMd="1" pushXl="2">
+                <div class="img_div ion-text-center">
+                    <img [src]="profileData.imageUri" height="150" width="150"
+                         style="border-radius: 50%;">
+                </div>
+                <div class="detail_div">
+                    <form>
+                        <ion-item class="item_div">
+                            <ion-label position="stacked" class="lbl_name" mode="md">Tên</ion-label>
+                            <span >{{profileData?.name}}</span>
+                        </ion-item>
+                        <ion-item class="item_div">
+                            <ion-label position="stacked" class="lbl_name" mode="md">Email</ion-label>
+                            <span >{{profileData?.email}}</span>
+                        </ion-item>
+                        <ion-item class="item_div">
+                            <ion-label position="stacked" class="lbl_name" mode="md">Số điện thoại</ion-label>
+                            <span >{{profileData?.phone_no}}</span>
+                        </ion-item>
+                    </form>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

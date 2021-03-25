@@ -44,4 +44,7 @@ export class GuardListPage implements OnInit {
   addNewGuard() {
     this.ntrl.navigateForward('park-guard');
   }
+  parkDetailDisplay(id) {
+    this.ntrl.navigateForward('list-details/'+id);
+  }
 }

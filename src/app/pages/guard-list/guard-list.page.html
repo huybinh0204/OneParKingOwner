@@ -22,7 +22,7 @@
 
     <ion-item-sliding *ngFor="let item of data |filter:search">
 
-      <ion-item lines="none">
+      <ion-item lines="none" (click)="parkDetailDisplay(item.id)">
         <ion-label class="name">{{item.name}} </ion-label>
       </ion-item>
       <ion-item-options side="end">

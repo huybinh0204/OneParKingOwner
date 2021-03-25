@@ -106,7 +106,6 @@ export class ScannerPage implements OnInit {
       result => console.log('Has permission?', result.hasPermission),
       err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
     );
-
     if (this.id) {
       this.api.startLoader();
 
