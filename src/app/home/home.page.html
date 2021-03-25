@@ -38,8 +38,7 @@
     overflow-x: auto;">
 
 
-    <div class="ion-margin-start ion-text-center" *ngFor="let g of mySpaceData.guards">
-
+    <div class="ion-margin-start ion-text-center" *ngFor="let g of mySpaceData.guards" (click)="parkDetailDisplay(g.id)">
       <img [src]="g.imageUri" alt="" srcset="" height="50" width="50" style="border-radius: 50%;">
       <h6 style="margin-top: 8px;">{{g.name}}</h6>
     </div>
@@ -79,13 +78,14 @@
         <img [src]="item?.user?.imageUri" width="75" height="75" >
       </div>
       <div class="data_div" >
-        <h3 class="name">{{item?.user.name}} <span class="ion-float-right">{{item?.total_amount}}vnđ</span></h3>
+        <h3 class="name">{{item?.user.name}} <span class="ion-float-right">{{item?.total_amount}}Đ</span></h3>
         <p class="id_p">
           <ion-icon src="assets/icon-image/card-img.svg"></ion-icon> ID No. {{item?.order_no}}
           <span> <br>
-            <ion-icon src="assets/icon-image/clock-img.svg"></ion-icon>{{item?.arriving_time | date:'MMM d hh:mm aaa'}}
+            <ion-icon src="assets/icon-image/clock-img.svg"></ion-icon>{{item?.arriving_time | date:'HH:mm dd-MM-yyyy'}}
             To
-            {{item?.leaving_time | date:'shortTime'}}
+<!--            {{item?.leaving_time | date:'shortTime'}}-->
+            {{item?.leaving_time | date:'HH:mm dd-MM-yyyy'}}
           </span>
         </p>
         <p class="car_p">

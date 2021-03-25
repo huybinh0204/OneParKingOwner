@@ -44,6 +44,10 @@ const routes: Routes = [
     path: 'guard-list',
     loadChildren: () => import('./pages/guard-list/guard-list.module').then(m => m.GuardListPageModule)
   },
+  // {
+  //   path: 'park-detail/:id',
+  //   loadChildren: () => import('./pages/park-detail/park-detail.module').then(m => m.ParkDetailPageModule)
+  // },
   {
     path: 'transaction',
     loadChildren: () => import('./pages/transaction/transaction.module').then(m => m.TransactionPageModule)

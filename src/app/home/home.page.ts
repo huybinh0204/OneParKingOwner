@@ -37,6 +37,10 @@ export class HomePage {
     this.menu.enable(true);
     this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.CAMERA]).then(() => {}, (err) => {});
   }
+  parkDetailDisplay(id) {
+    // this.ntrl.navigateForward('park-detail/' + id);
+
+  }
 
   mapView() {
     this.ntrl.navigateForward('home-map');

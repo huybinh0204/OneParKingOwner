@@ -20,20 +20,13 @@ export class AppComponent {
       icon: 'home',
       for: 1
     },
-    {
-      title: 'Hồ sơ',
-      url: '/owner-detail',
-      // icon: 'assets/icon-image/user.svg',
-      icon: 'person',
-      for: 1
-    },
-    {
-      title: 'Đăng ký',
-      url: '/plan-detail',
-      // icon: 'assets/icon-image/user.svg',
-      icon: 'card',
-      for: 2
-    },
+    // {
+    //   title: 'Quản lý phí dịch vụ',
+    //   url: '/plan-detail',
+    //   // icon: 'assets/icon-image/user.svg',
+    //   icon: 'card',
+    //   for: 2
+    // },
     {
       title: 'Quản lý bảo vệ',
       url: '/guard-list',
@@ -49,19 +42,19 @@ export class AppComponent {
       for: 2
     },
     {
-      title: 'Giao dịch',
+      title: 'Thống kê giao dịch',
       url: '/transaction',
       // icon: 'assets/icon-image/dollar-coin.svg',
       icon: 'logo-usd',
       for: 1
     },
-    {
-      title: 'Hình ảnh',
-      url: '/images',
-      // icon: 'assets/icon-image/dollar-coin.svg',
-      icon: 'images',
-      for: 1
-    },
+    // {
+    //   title: 'Thư viện ảnh',
+    //   url: '/images',
+    //   // icon: 'assets/icon-image/dollar-coin.svg',
+    //   icon: 'images',
+    //   for: 1
+    // },
 
     {
       title: 'Review',
@@ -76,7 +69,14 @@ export class AppComponent {
       // icon: 'assets/icon-image/scannner-menu.svg',
       icon: 'barcode',
       for: 1
-    }
+    },
+    // {
+    //   title: 'Hồ sơ',
+    //   url: '/owner-detail',
+    //   // icon: 'assets/icon-image/user.svg',
+    //   icon: 'person',
+    //   for: 1
+    // },
   ];
   profileData: any = {};
   type = 'owner';

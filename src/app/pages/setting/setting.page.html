@@ -20,18 +20,24 @@
 
     <ion-grid class="ion-no-padding">
       <ion-row>
-        <ion-col size="6">
-          <ion-item>
-            <ion-label position="floating">STRIPE_SECRET </ion-label>
-            <ion-input name="stripe_sk" [(ngModel)]="profileData.stripe_sk"></ion-input>
-          </ion-item>
-        </ion-col>
-        <ion-col size="6">
-          <ion-item>
-            <ion-label position="floating">STRIPE_KEY </ion-label>
-            <ion-input name="stripe_pk" [(ngModel)]="profileData.stripe_pk"></ion-input>
-          </ion-item>
-        </ion-col>
+        <ul >
+          <li>Quản lý Hồ sơ </li>
+          <li>Quản lý phí dịch vụ</li>
+          <li>Cấu hình bãi xe</li>
+          <li>Thư viện ảnh</li>
+        </ul>
+<!--        <ion-col size="6">-->
+<!--          <ion-item>-->
+<!--            <ion-label position="floating">STRIPE_SECRET </ion-label>-->
+<!--            <ion-input name="stripe_sk" [(ngModel)]="profileData.stripe_sk"></ion-input>-->
+<!--          </ion-item>-->
+<!--        </ion-col>-->
+<!--        <ion-col size="6">-->
+<!--          <ion-item>-->
+<!--            <ion-label position="floating">STRIPE_KEY </ion-label>-->
+<!--            <ion-input name="stripe_pk" [(ngModel)]="profileData.stripe_pk"></ion-input>-->
+<!--          </ion-item>-->
+<!--        </ion-col>-->
       </ion-row>
     </ion-grid>
   </div>
