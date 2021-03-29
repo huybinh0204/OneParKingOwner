@@ -1,12 +1,22 @@
+<!--<ion-header>-->
+<!--  <ion-toolbar mode="md" color="primary">-->
+<!--    <ion-buttons slot="start">-->
+<!--      <ion-menu-button></ion-menu-button>-->
+
+
+<!--    </ion-buttons>-->
+<!--    <ion-title>QR Code</ion-title>-->
+
+<!--  </ion-toolbar>-->
+<!--</ion-header>-->
 <ion-header>
   <ion-toolbar mode="md" color="primary">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-
-
+      <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>QR Code</ion-title>
-
+    <ion-buttons slot="end">
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -66,7 +76,7 @@
             </div>
             <div class="price">
               <h3 class="label">Giá</h3>
-              <p class="data">{{booking?.total_amount}}Đ</p>
+              <p class="data">{{formatCash(booking?.total_amount)}}Đ</p>
             </div>
           </div>
           <div class="name_div">
@@ -75,12 +85,12 @@
               <span class="ion-float-right">Số xe: {{booking?.vehicle?.vehicle_no}}</span></p>
           </div>
           <div class="ion-text-center">
-            <ion-button (click)="changeStatus(1,0,1)" *ngIf="booking?.status == '0' && booking?.checkin == true">
+            <ion-button (click)="changeStatus(1,0,1)" *ngIf="booking?.status == '0'">
               <ion-icon slot="start" name="arrow-dropright"></ion-icon>Check In
             </ion-button>
-            <ion-button *ngIf="booking?.status == '0' && booking?.checkin == false">
-              <ion-icon slot="start" name="arrow-dropright"></ion-icon>Check In
-            </ion-button>
+<!--            <ion-button *ngIf="booking?.status == '0' && booking?.checkin == false">-->
+<!--              <ion-icon slot="start" name="arrow-dropright"></ion-icon>Check In-->
+<!--            </ion-button>-->
             <ion-button (click)="changeStatus(2,1,2)" *ngIf="booking?.status == '1' && booking?.payment?.success == true">
               <ion-icon slot="start" name="checkmark"></ion-icon>Check Out
             </ion-button>

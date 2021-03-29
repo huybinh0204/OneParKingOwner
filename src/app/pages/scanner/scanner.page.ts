@@ -110,13 +110,16 @@ export class ScannerPage implements OnInit {
       this.api.startLoader();
 
       this.api.authGetReq('booking/' + this.id).subscribe((res: any) => {
-
-        this.booking = res.data;
-        console.log("booking",res.data)
+        console.log("booking",res)
+        if (res.success == true){
+          this.booking = res.data;
+        }else {
+        }
         this.api.dismissLoader();
 
       }, err => {
         console.error('err', err);
+
         this.api.dismissLoader();
 
       });
@@ -161,7 +164,7 @@ export class ScannerPage implements OnInit {
         this.api.dismissLoader();
         this.ngOnInit();
       }else {
-        console.log("msg",res);
+        alert(res.msg)
       }
 
     }, err => {
@@ -192,5 +195,12 @@ export class ScannerPage implements OnInit {
 
     return await modal.present();
 
+  }
+
+  formatCash(str) {
+    const a = String(str);
+    return a.split('').reverse().reduce((prev, next, index) => {
+      return ((index % 3) ? next : (next + ',')) + prev
+    })
   }
 }

@@ -23,7 +23,6 @@
     <!-- // -->
     <ng-container *ngIf="type==='owner'">
       <app-space-header></app-space-header>
-
     </ng-container>
 
   </ion-toolbar>
@@ -73,26 +72,90 @@
   <div class="user_div ion-margin-horizontal">
 <!--    ng-class="background: #d33939"-->
     <p class="user_p">Khách hàng đặt chỗ<span class="ion-float-right">Ngày đặt</span></p>
-    <div class="card_div" style="border-bottom: solid 1px #e0b500"  *ngFor="let item of bookingData |filter:search" (click)="bookingDisplay(item.id)">
-      <div class="img_div">
-        <img src="../../assets/image/icon_user.png" width="64" height="50" style="border-radius: 50px; margin-top: 10px">
-<!--        <img [src]="item?.user?.imageUri" width="75" height="75" >-->
-      </div>
-      <div class="data_div" >
-        <h3 class="name">{{item?.user.name}} <span class="ion-float-right">{{item?.total_amount}} Đ</span></h3>
-        <p class="id_p">
-          <ion-icon src="assets/icon-image/card-img.svg"></ion-icon> ID No. {{item?.order_no}}
-          <span> <br>
+    <div class="card_div"  *ngFor="let item of bookingData |filter:search" (click)="bookingDisplay(item.id)">
+      <div style="width: 100%; border-style: solid; border-color:yellow; border-radius: 10px; padding: 10px" *ngIf="item?.status == 0" >
+        <div class="img_div" style="float: left" >
+          <img src="../../assets/image/icon_user.png" width="64" height="60" style="border-radius: 50px; margin-top: 10px">
+          <!--        <img [src]="item?.user?.imageUri" width="75" height="75" >-->
+        </div>
+        <div class="data_div" >
+          <h3 class="name">{{item?.user.name}} <span class="ion-float-right">{{formatCash(item?.total_amount)}} Đ</span></h3>
+          <p class="id_p">
+            <ion-icon src="assets/icon-image/card-img.svg"></ion-icon> ID No. {{item?.order_no}}
+            <span> <br>
             <ion-icon src="assets/icon-image/clock-img.svg"></ion-icon>{{item?.arriving_time | date:'HH:mm dd-MM'}}
-            đến
-            {{item?.leaving_time | date:'HH:mm dd-MM'}}
+              đến
+              {{item?.leaving_time | date:'HH:mm dd-MM'}}
           </span>
-        </p>
-        <p class="car_p">
-          <ion-icon name="logo-model-s"></ion-icon>{{item?.vehicle?.brand}} - {{item?.vehicle?.vehicle_no}}
-          <!-- <span class="ion-float-right">Zone - A3</!-->
-        </p>
+          </p>
+          <p class="car_p">
+            <ion-icon name="logo-model-s"></ion-icon>{{item?.vehicle?.brand}} - {{item?.vehicle?.vehicle_no}}
+            <!-- <span class="ion-float-right">Zone - A3</!-->
+          </p>
+        </div>
       </div>
+        <div style="width: 100%; border-style: solid; border-color:#3171e0; border-radius: 10px; padding: 10px" *ngIf="item?.status == 1" >
+            <div class="img_div" style="float: left" >
+                <img src="../../assets/image/icon_user.png" width="64" height="60" style="border-radius: 50px; margin-top: 10px">
+                <!--        <img [src]="item?.user?.imageUri" width="75" height="75" >-->
+            </div>
+            <div class="data_div" >
+                <h3 class="name">{{item?.user.name}} <span class="ion-float-right">{{formatCash(item?.total_amount)}} Đ</span></h3>
+                <p class="id_p">
+                    <ion-icon src="assets/icon-image/card-img.svg"></ion-icon> ID No. {{item?.order_no}}
+                    <span> <br>
+            <ion-icon src="assets/icon-image/clock-img.svg"></ion-icon>{{item?.arriving_time | date:'HH:mm dd-MM'}}
+                        đến
+                        {{item?.leaving_time | date:'HH:mm dd-MM'}}
+          </span>
+                </p>
+                <p class="car_p">
+                    <ion-icon name="logo-model-s"></ion-icon>{{item?.vehicle?.brand}} - {{item?.vehicle?.vehicle_no}}
+                    <!-- <span class="ion-float-right">Zone - A3</!-->
+                </p>
+            </div>
+        </div>
+        <div style="width: 100%; border-style: solid; border-color:#10dc60; border-radius: 10px; padding: 10px" *ngIf="item?.status == 2" >
+            <div class="img_div" style="float: left" >
+                <img src="../../assets/image/icon_user.png" width="64" height="60" style="border-radius: 50px; margin-top: 10px">
+                <!--        <img [src]="item?.user?.imageUri" width="75" height="75" >-->
+            </div>
+            <div class="data_div" >
+                <h3 class="name">{{item?.user.name}} <span class="ion-float-right">{{formatCash(item?.total_amount)}} Đ</span></h3>
+                <p class="id_p">
+                    <ion-icon src="assets/icon-image/card-img.svg"></ion-icon> ID No. {{item?.order_no}}
+                    <span> <br>
+            <ion-icon src="assets/icon-image/clock-img.svg"></ion-icon>{{item?.arriving_time | date:'HH:mm dd-MM'}}đến{{item?.leaving_time | date:'HH:mm dd-MM'}}
+          </span>
+                </p>
+                <p class="car_p">
+                    <ion-icon name="logo-model-s"></ion-icon>{{item?.vehicle?.brand}} - {{item?.vehicle?.vehicle_no}}
+                    <!-- <span class="ion-float-right">Zone - A3</!-->
+                </p>
+            </div>
+        </div>
+        <div style="width: 100%; border-style: solid; border-color:red; border-radius: 10px; padding: 10px" *ngIf="item?.status == 3" >
+            <div class="img_div" style="float: left" >
+                <img src="../../assets/image/icon_user.png" width="64" height="60" style="border-radius: 50px; margin-top: 10px">
+                <!--        <img [src]="item?.user?.imageUri" width="75" height="75" >-->
+            </div>
+            <div class="data_div" >
+                <h3 class="name">{{item?.user.name}} <span class="ion-float-right">{{formatCash(item?.total_amount)}} Đ</span></h3>
+                <p class="id_p">
+                    <ion-icon src="assets/icon-image/card-img.svg"></ion-icon> ID No. {{item?.order_no}}
+                    <span> <br>
+            <ion-icon src="assets/icon-image/clock-img.svg"></ion-icon>{{item?.arriving_time | date:'HH:mm dd-MM'}}
+                        đến
+                        {{item?.leaving_time | date:'HH:mm dd-MM'}}
+          </span>
+                </p>
+                <p class="car_p">
+                    <ion-icon name="logo-model-s"></ion-icon>{{item?.vehicle?.brand}} - {{item?.vehicle?.vehicle_no}}
+                    <!-- <span class="ion-float-right">Zone - A3</!-->
+                </p>
+            </div>
+        </div>
+
     </div>
 
   </div>

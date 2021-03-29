@@ -46,7 +46,7 @@ export class AppComponent {
       url: '/transaction',
       // icon: 'assets/icon-image/dollar-coin.svg',
       icon: 'logo-usd',
-      for: 1
+      for: 2
     },
     // {
     //   title: 'Thư viện ảnh',

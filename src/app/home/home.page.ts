@@ -20,15 +20,15 @@ export class HomePage {
     this.id = localStorage.getItem('defaultParking');
     this.type = localStorage.getItem('userType') || 'owner';
   }
-
-  ionViewWillEnter() {
+  ngOnInit() {
     this.api.startLoader();
+    // console.log("ssss",this.id);
     this.api.authGetReq('space/' + this.id).subscribe((res: any) => {
       console.log('res1', res);
       this.api.dismissLoader()
 
       this.mySpaceData = res.data.space;
-        this.bookingData = res.data.booking;
+      this.bookingData = res.data.booking;
     }, err => {
       this.api.dismissLoader();
 
@@ -36,6 +36,15 @@ export class HomePage {
     });
     this.menu.enable(true);
     this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.CAMERA]).then(() => {}, (err) => {});
+  }
+  ionViewWillEnter() {
+
+  }
+  formatCash(str) {
+    const a = String(str);
+    return a.split('').reverse().reduce((prev, next, index) => {
+      return ((index % 3) ? next : (next + ',')) + prev
+    })
   }
 
 
@@ -49,7 +58,10 @@ export class HomePage {
     this.ntrl.navigateForward('scanner/' + id);
   }
   parkDetailDisplay(id) {
-    this.ntrl.navigateForward('list-details/'+id);
+    // console.log("his.type",this.type);
+    if(this.type == 'owner'){
+      this.ntrl.navigateForward('list-details/'+id);
+    }
   }
   parkingView() {
     this.ntrl.navigateForward('live-parking');

@@ -26,10 +26,12 @@ export class ParkDetailsPage implements OnInit {
         console.log("id",this.id)
         this.api.startLoader();
         if (this.id){
-            this.api.authGetReq('profile').subscribe(
+            this.api.authGetReq('guard/'+this.id).subscribe(
                 res => {
-                    console.log('profileData profile', res)
-                    this.profileData = res;
+                    // @ts-ignore
+                    console.log('profileData profile', res.data)
+                    // @ts-ignore
+                    this.profileData = res.data;
                     this.api.dismissLoader();
                 },
                 err => {

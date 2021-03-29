@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     const token = localStorage.getItem('token') ? localStorage.getItem('token') : '';
     if (token.length > 0) {
-      this.ntrl.navigateForward(['home']);
+      // this.ntrl.navigateForward(['home']);
     }
     const remember = localStorage.getItem('remember') ? localStorage.getItem('remember') : '';
     if(remember === 'true') {
@@ -39,13 +39,13 @@ export class LoginPage implements OnInit {
   gotoSlide() {
     this.api.startLoader();
     localStorage.setItem('userType', this.data.type);
-
     this.api.postWithAuth('login', this.data).subscribe(
       (res: any) => {
         this.api.dismissLoader();
         if (res.success === true) {
           localStorage.setItem('userType', this.data.type);
           localStorage.setItem('token', res.data.token);
+          localStorage.setItem('defaultParking', res.data.space_id);
           if (this.data.remember) {
             localStorage.setItem('remember', 'true');
             localStorage.setItem('email', this.data.email);
@@ -56,26 +56,31 @@ export class LoginPage implements OnInit {
             localStorage.removeItem('password');
             localStorage.setItem('remember', 'false');
           }
-          console.log("login----",res)
-          console.log("login----",res.data.token)
-          this.api.presentToast(res.msg);
+          // console.log("login----",res)
+          // console.log("login----",res.data.token)
+          // this.api.presentToast(res.msg);
           this.api.generateURL();
-          window.location.reload();
+          this.ntrl.navigateForward(['home']);
+          // window.location.reload();
         } else {
-          this.api.presentToast(res.msg);
+          alert(res.msg)
+          // this.api.presentToast(res.msg);
         }
       },
       err => {
         this.api.dismissLoader();
 
+
         if (err.status === 401) {
+          alert("Bạn điền sai thông tin đăng nhập!")
           console.log('err', err.statusText);
-          this.api.presentToast(err.statusText);
+          // this.api.presentToast(err.statusText);
         }
         if (err.status === 422) {
+          alert(err.message)
           this.error = err.error.errors;
           console.log('err', this.error);
-          this.api.presentToast(err.error.message);
+          // this.api.presentToast(err.error.message);
         }
       }
     );

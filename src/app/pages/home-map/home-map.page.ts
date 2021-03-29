@@ -36,7 +36,10 @@ export class HomeMapPage implements OnInit {
 
   }
   addSpace() {
+    this.api.startLoader();
+    alert("Thêm vị trí thành công!")
     this.ntrl.navigateRoot('park-address');
+    this.api.dismissLoader();
 
   }
 }

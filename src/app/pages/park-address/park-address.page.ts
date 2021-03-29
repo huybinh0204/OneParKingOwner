@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
 import { ApiService } from './../../service/api.service';
+import {log} from 'util';
 
 @Component({
   selector: 'app-park-address',
@@ -13,12 +14,11 @@ export class ParkAddressPage implements OnInit {
   data: any = {};
   segment = 'basic';
   parkingZone: Array<any> = [];
-  lat = 51.678418;
-  lng = 7.809007;
+  lat = 20.9758;
+  lng = 105.782;
   markerD = true;
   facilities: any = [];
   error: any = {};
-
   constructor(private ntrl: NavController, private api: ApiService) {
     this.data.lat = this.lat;
     this.data.lng = this.lng;
@@ -87,22 +87,23 @@ export class ParkAddressPage implements OnInit {
       ' ' +
       this.data.country;
     this.data.parkingZone = this.parkingZone;
+    console.log("space",this.data);
     this.api.authPostReq('space', this.data).subscribe(
       (res: any) => {
         this.api.dismissLoader();
-
         if (res.success === true) {
           this.api.presentToast(res.msg);
           this.ntrl.navigateForward(['home-map']);
         }
       },
       err => {
+        console.log("......",err);
         this.api.dismissLoader();
-
         console.error('err', err);
         if (err.status === 422) {
           this.error = err.error.errors;
-          this.api.presentToast(err.error.message);
+          alert("Không thể thêm bảo vệ!")
+          // this.api.presentToast(err.error.message);
         }
       }
     );

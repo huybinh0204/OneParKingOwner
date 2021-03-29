@@ -227,16 +227,12 @@
             <ng-container *ngSwitchCase="'guard'">
               <form class="ion-margin-horizontal">
                 <p class="form_p">Thêm bảo vệ vào bãi xe?</p>
-
                 <ion-item class="item_div">
                   <ion-label position="stacked" class="lbl_name">Danh sách bảo vệ</ion-label>
                   <ion-select multiple="true" name="guardList" [(ngModel)]="data.guardList">
                     <ion-select-option [value]="f.id" *ngFor="let f of guardData">{{f.name}}</ion-select-option>
-
                   </ion-select>
                 </ion-item>
-
-
                 <ion-row>
                   <ion-col class="ion-no-padding" sizeXs="12" sizeSm="12">
                     <ion-item lines="none" button="true" detail="false" (click)="addNewGuard()">
