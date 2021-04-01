@@ -69,8 +69,6 @@ export class LoginPage implements OnInit {
       },
       err => {
         this.api.dismissLoader();
-
-
         if (err.status === 401) {
           alert("Bạn điền sai thông tin đăng nhập!")
           console.log('err', err.statusText);
